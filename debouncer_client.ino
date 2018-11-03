@@ -55,6 +55,9 @@ void process_command( void )
     case 'v':
     case 'V':
       verbose_mode = !verbose_mode;
+
+      debounceButton.debug(verbose_mode);
+      
       Serial.print("Verbose mode now ");
       if (verbose_mode)
       {
@@ -106,7 +109,9 @@ void loop()
     Serial.print("Button now ");
     Serial.print(current_button_state);
     Serial.print(" presses: ");
-    Serial.println(presses);
+    Serial.print(presses);
+    Serial.print(" Bounces: ");
+    Serial.println(debounceButton.getNumBounces());
 
     last_button_state = current_button_state;
   }
