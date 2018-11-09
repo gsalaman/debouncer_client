@@ -2,7 +2,7 @@
 
 #define BUTTON_PIN 10
 
-Debouncer debounceButton(BUTTON_PIN);
+Debouncer debounceButton(BUTTON_PIN, HIGH);
 
 bool sw_debounce=false;
 bool verbose_mode=false;
